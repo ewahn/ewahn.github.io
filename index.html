@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,9 +13,9 @@
         <nav>
             <ul>
                 <li><a href="#home-section">Home</a></li>
-                <li><a href="#categories-section">Categories</a></li>
+                <li><a href="listing.html">Listings</a></li>   
                 <li><a href="#post-ad-section">Post Ad</a></li>
-                <li><a href="#about-section">About</a></li>
+                <li><a href="#about-section">About</a></li>  
             </ul>
         </nav>
     </header>
@@ -24,45 +24,60 @@
             <h2>Welcome to Craigslist Edinburgh</h2>
             <p>Welcome to Craigslist Edinburgh, the dynamic online marketplace that serves as a central hub for the vibrant and historic city of Edinburgh. Whether you're a local resident or a newcomer eager to explore what this majestic city has to offer, Craigslist Edinburgh provides a vast array of options that cater to every need, interest, and curiosity.</p>
             <h3>Discovering the Heart of Edinburgh Through Craigslist</h3>
-            <p>Edinburgh, Scotland's capital, is renowned for its rich history, stunning architecture, and bustling cultural scene. From the iconic Edinburgh Castle perched atop an ancient volcano to the serene beauty of the Royal Botanic Garden, the city is a blend of natural beauty and historical grandeur. Amidst this backdrop, Craigslist Edinburgh emerges as a vital tool for navigating the city's offerings, connecting people, and fostering community engagement.
-                turn this into html appliable code</p>
+            <p>Edinburgh, Scotland's capital, is renowned for its rich history, stunning architecture, and bustling cultural scene. From the iconic Edinburgh Castle perched atop an ancient volcano to the serene beauty of the Royal Botanic Garden, the city is a blend of natural beauty and historical grandeur. Amidst this backdrop, Craigslist Edinburgh emerges as a vital tool for navigating the city's offerings, connecting people, and fostering community engagement.</p>
         </section>
-        <section id="categories-section" class="light-section">
-            <h2>Categories</h2>
-            <p>Select a category from the dropdown, then click the "Search" button for results.</p>
-            <div class="dropdown">
-                <select id="categorySelect" onchange="categoryChanged(this)">
-                    <option value="">Select a Category...</option>
-                    <option value="for-sale">For Sale</option>
-                    <option value="housing">Housing</option>
-                    <option value="community">Community</option>
-                    <option value="gigs">Gigs</option>
-                    <option value="jobs">Jobs</option>
-                    <option value="personals">Personals</option>
-                    <option value="pictures">Pictures</option>
-                    <option value="resumes">Resumes</option>
-                    <option value="services">Services</option>
-                </select>
-            </div>
-            <button id="searchButton" onclick="searchCategory()">Search</button>
+        <section id="Listings">
+            <h2>Listings</h2>
+            <p>Click the search button to be able to browse available listings.</p>
+            <button id="searchButton" onclick="redirectToListingPage()">Search</button>
         </section>
-        
-        </section>
-        <section id="post-ad-section">
+        <section id="submit-ad-section">
             <h2>Post Your Ad</h2>
-            <p>Have something to sell or a service to offer? Post your ad here and reach thousands in Edinburgh. Post your ad on our platform to quickly reach Edinburgh's community. Ideal for individuals, businesses, or service providers, our site makes it easy to connect with local buyers and clients. Simply submit your ad with details, prices, and contact info. It's a straightforward way to expand your reach and find interested parties in the city. Post now and tap into Edinburgh's active market.</p>
-            <button id="postAdButton" onclick="postAd()">Post an Ad</button>
-        </section>
+            <p>Have something to sell or a service to offer? Fill out the form below and reach thousands in Edinburgh.</p>
+            <form id="submitAdForm">
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>              
+                </div>
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="for-sale">For Sale</option>
+                        <option value="housing">Housing</option>
+                        <option value="community">Community</option>
+                        <option value="gigs">Gigs</option>
+                        <option value="jobs">Jobs</option>
+                        <option value="personals">Personals</option>
+                        <option value="services">Services</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price (£):</label>
+                    <input type="number" id="price" name="price" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image URL:</label>
+                    <input type="text" id="image" name="image">
+                </div>
+                <button type="submit">Submit Ad</button>
+                <div id="submitSuccessMessage" style="display: none; color: green; margin-top: 20px;">
+                    Your ad has been successfully submitted!
+                </div>                
+            </form>
+        </section>        
         <section id="about-section">
             <h2>About Us</h2>
-            <p>Craigslist Edinburgh, under Gaultier's creative vision, is more than just a marketplace—it's a space where connections are made, stories are shared, and the city's diverse culture is celebrated. Whether you're seeking the rare and unusual, the practical, or a new opportunity, our platform is designed to facilitate these discoveries with ease and style.
-
-                Join us in this adventure, where every listing tells a story and every transaction is a thread in the fabric of our community. Welcome to Craigslist Edinburgh, where the extraordinary is always within reach.</p>
+            <p>Craigslist Edinburgh, under Gaultier's creative vision, is more than just a marketplace—it's a space where connections are made, stories are shared, and the city's diverse culture is celebrated.</p>
         </section>
     </main>
     <footer>
         <p>© 2024 Craigslist Edinburgh by Jean Paul Gaultier.</p>
     </footer>
     <script src="script.js"></script>
+    <script src="submitad.js"></script>
 </body>
 </html>

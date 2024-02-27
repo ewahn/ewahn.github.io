@@ -1,21 +1,8 @@
-
 html {
     scroll-behavior: smooth;
 }
 
-section {
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.category-list li {
-    list-style-type: none;
-    padding: 10px 0;
-}
-
-
 body, html {
-    
     margin: 0;
     padding: 0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -24,79 +11,152 @@ body, html {
 }
 
 header {
-    background-color: #1C1C1E; 
-    color: #4a77f5; 
+    background-color: #1C1C1E; /* Dark header */
+    color: #4a77f5; /* Highlight color */
     padding: 20px;
     text-align: center;
+}
+
+header h1, header h2 {
+    color: #ffffff; /* White text for clarity */
 }
 
 header h2 {
     font-style: italic;
     font-weight: normal;
     font-size: 1.2rem;
-    color: #ffffff; 
     text-align: center;
-}
-
-
-.dropdown select {
-    padding: 15px; 
-    margin-top: 10px;
-    background-color: #333;
-    color: #CCCCCC;
-    border: 1px solid #555;
-    border-radius: 5px;
-    width: 250px; 
-    font-size: 16px; 
-}
-
-#searchButton {
-    padding: 12px 20px;
-    margin-top: 10px; 
-    background-color: #39a4be; 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px; 
-    cursor: pointer; 
-}
-
-#searchButton:hover {
-    background-color: #357D8C; 
-}
-
-#postAdButton {
-    padding: 12px 20px;
-    margin-top: 10px; 
-    background-color: #0db61b; 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-#postAdButton:hover {
-    background-color: #0a9616; 
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 10px;
+    margin: 0 10px;
 }
 
 nav ul li a {
-    color: #FFFFFF; 
+    color: #FFFFFF; /* White links */
     text-decoration: none;
     font-weight: bold;
 }
 
-main {
+.dropdown select, #searchButton, #postAdButton {
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #333; /* Dark elements */
+    color: #ffffff; /* White text for contrast */
+    border: 1px solid #555;
+    border-radius: 5px;
+    width: 250px; /* Ensure uniform width */
+    font-size: 16px;
+    cursor: pointer; /* Cursor pointer for interactive elements */
+}
+
+#searchButton, #postAdButton {
+    padding: 12px 20px;
+    border: none; /* Remove border for buttons */
+}
+
+#searchButton {
+    background-color: #38b1cf; 
+}
+
+#searchButton:hover, #postAdButton:hover {
+    opacity: 0.8; 
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    color: #ffffff; 
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%; 
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #ffffff; 
+}
+
+.form-group input[type="file"] {
+    background-color: transparent; 
+    border: none;
+    color: #ffffff; 
+}
+
+#submitAd {
+    width: 13.4%; 
+    padding: 15px 20px;
+    background-color: #4CAF50; 
+    color: #2bcc0a; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    opacity: 0.8;
+}
+
+button[type="submit"] {
+    background-color: #0bc70b;
+    color: #ffffff;
+    border: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: #066d14;
+}
+
+.ad {
+    border: 2px solid #058f05; 
+    margin-bottom: 20px; 
+    padding: 10px; 
+}
+
+
+.ad img {
+    max-width: 100%;
+    height: auto;
+    display: block; 
+    margin-top: 10px; 
+}
+
+
+#adsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+
+
+.ad {
+    flex-basis: calc(33.333% - 20px); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+    background: #121212; 
+}
+
+
+main, section {
     padding: 20px;
 }
 
@@ -105,13 +165,23 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
-    position: fixed; 
+    position: fixed;
     bottom: 0;
-    width: 100%;
-    transition: bottom 0.3s; 
-    z-index: 100; 
+    width: 100%; 
 }
 
-a:hover, a:active {
-    color: #C0C0C0; 
+header, footer {
+    transition: top 0.3s, bottom 0.3s;
+}
+
+
+@media (max-width: 768px) {
+    .dropdown select {
+        width: 90%; 
+    }
+
+    nav ul li {
+        display: block; 
+        margin: 10px 0;
+    }
 }

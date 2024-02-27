@@ -1,0 +1,41 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listings - Craigslist Edinburgh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Craigslist Edinburgh - Listings</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>           
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 id="categoryTitle">Category:</h2>
+        <div id="adsContainer"></div>
+    </main>
+    <footer>
+        <p>© 2024 Craigslist Edinburgh by Jean Paul Gaultier.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var category = urlParams.get('category');
+            if (category) {
+                var categoryElement = document.getElementById(category);
+                if (categoryElement) {
+                    // Scroll to the category section
+                    window.scrollTo(0, categoryElement.offsetTop - 20); // Adjust the offset as needed
+                }
+            }
+        });
+        </script>        
+    <script src="listing.js"></script>
+    <script src="displayad.js"></script>
+</body>
+</html>
